@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voronoi DXF Configurator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Voronoi DXF Configurator</h1>
+    <p class="subtitle">Generate parametric Voronoi diagrams for laser cutting &amp; CNC</p>
+  </header>
+
+  <main>
+    <aside class="panel">
+      <h2>Parameters</h2>
+
+      <div class="param-group">
+        <label for="num_seeds">
+          Seeds
+          <span class="value-badge" id="num_seeds_val">20</span>
+        </label>
+        <input type="range" id="num_seeds" min="5" max="60" step="1" value="20" />
+      </div>
+
+      <div class="param-group">
+        <label for="space_between_cells">
+          Cell Gap
+          <span class="value-badge" id="space_between_cells_val">10</span>
+        </label>
+        <input type="range" id="space_between_cells" min="2" max="30" step="0.5" value="10" />
+      </div>
+
+      <div class="param-group">
+        <label for="outline_margin">
+          Outline Margin
+          <span class="value-badge" id="outline_margin_val">10</span>
+        </label>
+        <input type="range" id="outline_margin" min="5" max="40" step="0.5" value="10" />
+      </div>
+
+      <div class="param-group">
+        <label for="triangle_size">
+          Triangle Size
+          <span class="value-badge" id="triangle_size_val">476</span>
+        </label>
+        <input type="range" id="triangle_size" min="200" max="700" step="5" value="476" />
+      </div>
+
+      <div class="param-group">
+        <label for="corner_radius">
+          Corner Radius
+          <span class="value-badge" id="corner_radius_val">10</span>
+        </label>
+        <input type="range" id="corner_radius" min="0" max="30" step="0.5" value="10" />
+      </div>
+
+      <div class="param-group">
+        <label for="simplification_tolerance">
+          Simplify Tolerance
+          <span class="value-badge" id="simplification_tolerance_val">0.10</span>
+        </label>
+        <input type="range" id="simplification_tolerance" min="0.05" max="2.0" step="0.05" value="0.1" />
+      </div>
+
+      <div class="actions">
+        <button id="downloadBtn" class="btn-primary">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 13l-4-4h3V3h2v6h3l-4 4zm-6 3h12v-2H4v2z"/></svg>
+          Download DXF
+        </button>
+      </div>
+
+      <div id="status" class="status hidden"></div>
+    </aside>
+
+    <section class="canvas-wrap">
+      <div class="canvas-container">
+        <canvas id="voronoiCanvas"></canvas>
+        <div id="spinner" class="spinner hidden">
+          <div class="spinner-ring"></div>
+        </div>
+        <div id="legend">
+          <span class="legend-item outline">Outline</span>
+          <span class="legend-item logo">Logo</span>
+          <span class="legend-item cell">Cells</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

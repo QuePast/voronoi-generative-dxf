@@ -1,8 +1,7 @@
 # Voronoi DXF Configurator
 
 A browser-based parametric Voronoi diagram generator that exports production-ready DXF files for laser cutting, CNC machining, and CAD import (Creo, SolidWorks, AutoCAD).
-
-![screenshot](screenshot.png)
+<img width="1024" height="919" alt="02616db7-9c33-49df-a4c2-c5e6f56269e8" src="https://github.com/user-attachments/assets/0ff8150e-8da4-4828-a17f-8aa71646eeca" />
 
 ---
 
